@@ -195,19 +195,20 @@ function library:new(props)
 		}
 	)
 	-- 4
-	local main = utility.new(
-		"Frame",
-		{
-			AnchorPoint = Vector2.new(0.5,1),
-			BackgroundColor3 = Color3.fromRGB(20, 20, 20),
-			BorderColor3 = Color3.fromRGB(56, 56, 56),
-			BorderMode = "Inset",
-			BorderSizePixel = 1,
-			Size = UDim2.new(1,-10,1,-25),
-			Position = UDim2.new(0.5,0,1,-5),
-			Parent = outline2
-		}
-	)
+local main = utility.new(
+    "Frame",
+    {
+        AnchorPoint = Vector2.new(0.5,1),
+        BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+        BorderColor3 = Color3.fromRGB(56, 56, 56),
+        BorderMode = "Inset",
+        BorderSizePixel = 1,
+        Size = UDim2.new(0.8, -10, 0.6, -25),
+        Position = UDim2.new(0.5, 0, 1, -5),
+        Parent = outline2
+    }
+)
+
 	--
 	local title = utility.new(
 		"Frame",

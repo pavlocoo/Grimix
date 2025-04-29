@@ -1,0 +1,108 @@
+-- Custom window with purple theme and extremely small scale
+local window = library:new({
+    textsize = 10,  -- Reduce the text size to make it very small
+    font = Enum.Font.RobotoMono,
+    name = "Scaled UI",
+    color = Color3.fromRGB(128, 0, 128)  -- Purple color for the theme
+})
+
+-- Add a tab
+local tab = window:page({name = "Tab 1"})
+
+-- Create sections and multisections
+local section1 = tab:section({name = "Section 1", side = "left", size = 60})
+local multisection = tab:multisection({name = "Multisection", side = "right", size = 60})
+local section2 = multisection:section({name = "Section 2", side = "right", size = 30})
+
+-- Toggle
+section1:toggle({
+    name = "Enable Feature",
+    def = false,
+    callback = function(value)
+        print("Toggle value:", value)
+    end
+})
+
+-- Button
+section1:button({
+    name = "Press Me",
+    callback = function()
+        print("Button pressed!")
+    end
+})
+
+-- Slider
+section1:slider({
+    name = "Slider Example",
+    def = 50,
+    max = 100,
+    min = 0,
+    rounding = true,
+    ticking = false,
+    measuring = "",
+    callback = function(value)
+        print("Slider value:", value)
+    end
+})
+
+-- Dropdown
+section1:dropdown({
+    name = "Choose Option",
+    def = "Option 1",
+    max = 5,
+    options = {"Option 1", "Option 2", "Option 3", "Option 4", "Option 5"},
+    callback = function(chosen)
+        print("Chosen option:", chosen)
+    end
+})
+
+-- Buttonbox
+section1:buttonbox({
+    name = "Buttonbox Example",
+    def = "",
+    max = 3,
+    options = {"Choice 1", "Choice 2", "Choice 3"},
+    callback = function(value)
+        print("Buttonbox value:", value)
+    end
+})
+
+-- Multibox
+section1:multibox({
+    name = "Multibox Example",
+    def = {},
+    max = 3,
+    options = {"Option A", "Option B", "Option C"},
+    callback = function(value)
+        print("Multibox value:", value)
+    end
+})
+
+-- Textbox
+section1:textbox({
+    name = "Textbox Example",
+    def = "Default Text",
+    placeholder = "Enter something",
+    callback = function(value)
+        print("Textbox value:", value)
+    end
+})
+
+-- Keybind
+section1:keybind({
+    name = "Set Keybind",
+    def = nil,
+    callback = function(key)
+        print("Keybind set to:", key)
+    end
+})
+
+-- Color picker
+local picker = section1:colorpicker({
+    name = "Pick Color",
+    cpname = nil,
+    def = Color3.fromRGB(128, 0, 128),
+    callback = function(value)
+        print("Color picked:", value)
+    end
+})

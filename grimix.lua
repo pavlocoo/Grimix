@@ -1,4 +1,4 @@
--- // variables
+--- // variables
 local library = {}
 local pages = {}
 local sections = {}

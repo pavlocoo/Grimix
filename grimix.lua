@@ -1,4 +1,4 @@
---- // variables
+-- // variables
 local library = {}
 local pages = {}
 local sections = {}
@@ -203,7 +203,7 @@ function library:new(props)
 			BorderColor3 = Color3.fromRGB(56, 56, 56),
 			BorderMode = "Inset",
 			BorderSizePixel = 1,
-			Size = UDim2.new(0.85, -6, 0.85, -20)
+			Size = UDim2.new(1,-10,1,-25),
 			Position = UDim2.new(0.5,0,1,-5),
 			Parent = outline2
 		}
